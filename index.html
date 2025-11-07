@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>اتصل بنا - Deenway</title>
+  <title>Contact DEENWAY</title>
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="https://cdn-icons-png.flaticon.com/512/1705/1705004.png">
   <style>
@@ -36,64 +36,132 @@
       flex-direction: column;
     }
 
-    /* شريط التنقل */
-    .navbar {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      padding: 15px 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    /* تصميم الشعار المحسن */
+    .logo-container {
+      position: relative;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-logo {
-      font-size: 24px;
+    .logo {
+      font-size: 56px;
       font-weight: 900;
-      color: var(--light);
-      text-decoration: none;
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      color: var(--light);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      padding: 8px 16px;
-      border-radius: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 3px;
+      user-select: none;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
       transition: var(--transition);
     }
 
-    .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
+    .logo:hover {
+      transform: scale(1.05);
+      text-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
 
-    .nav-links a.active {
-      background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    .logo-decoration {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(29, 53, 87, 0.1) 0%, rgba(255,255,255,0) 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    /* تصميم العبارة الثابتة */
+    .tagline {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      min-height: 32px;
+      max-width: 90vw;
+      position: relative;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    /* تصميم قائمة اللغات المحسن */
+    .language-select {
+      margin-bottom: 35px;
+      position: relative;
+      width: 280px;
+      z-index: 10;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 100%;
+      padding: 14px 50px 14px 20px;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      outline: none;
+      transition: var(--transition);
+      z-index: 11;
+      position: relative;
+    }
+
+    /* إصلاح مشكلة عرض الخيارات */
+    select option {
+      background: white;
+      color: var(--text);
+      font-size: 16px;
+      padding: 12px 20px;
+      direction: ltr;
+    }
+
+    select:hover, select:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .language-select::after {
+      content: "▼";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      color: white;
+      pointer-events: none;
+      font-size: 14px;
+      font-weight: 700;
+      user-select: none;
+      transition: var(--transition);
+      z-index: 12;
+    }
+
+    .language-select:hover::after {
+      transform: translateY(-50%) scale(1.2);
     }
 
     /* المحتوى الرئيسي */
     .main-content {
       flex: 1;
-      padding: 40px 20px;
+      padding: 20px;
       max-width: 1200px;
       margin: 0 auto;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .page-header {
@@ -137,6 +205,8 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-bottom: 60px;
+      width: 100%;
+      max-width: 1000px;
     }
 
     .contact-card {
@@ -211,6 +281,8 @@
       margin-bottom: 60px;
       position: relative;
       overflow: hidden;
+      width: 100%;
+      max-width: 800px;
     }
 
     .contact-form-container::before {
@@ -253,7 +325,7 @@
       color: var(--primary);
     }
 
-    .form-input, .form-textarea {
+    .form-input, .form-textarea, .form-select {
       width: 100%;
       padding: 15px 20px;
       border: 2px solid #e0e0e0;
@@ -263,7 +335,7 @@
       font-family: inherit;
     }
 
-    .form-input:focus, .form-textarea:focus {
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
       outline: none;
       border-color: var(--secondary);
       box-shadow: 0 0 0 3px rgba(69, 123, 157, 0.2);
@@ -294,82 +366,34 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
-    /* قسم الأسئلة الشائعة */
-    .faq-section {
-      margin-bottom: 60px;
+    .submit-btn:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
 
-    .section-title {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--primary);
+    .form-message {
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
       text-align: center;
-      margin-bottom: 40px;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 2px;
-    }
-
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      background: var(--white);
-      border-radius: 15px;
-      margin-bottom: 15px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .faq-question {
-      padding: 20px 25px;
-      font-size: 18px;
       font-weight: 600;
-      color: var(--primary);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: var(--transition);
+      display: none;
     }
 
-    .faq-question:hover {
-      background: rgba(69, 123, 157, 0.05);
+    .form-message.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
     }
 
-    .faq-icon {
-      font-size: 20px;
-      transition: var(--transition);
-    }
-
-    .faq-answer {
-      padding: 0 25px;
-      max-height: 0;
-      overflow: hidden;
-      transition: var(--transition);
-      color: var(--text-light);
-      line-height: 1.7;
-    }
-
-    .faq-item.active .faq-answer {
-      padding: 0 25px 25px;
-      max-height: 500px;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(180deg);
+    .form-message.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      display: block;
     }
 
     /* الفوتر */
@@ -540,19 +564,15 @@
 
     /* تصميم متجاوب للهواتف */
     @media (max-width: 768px) {
-      .navbar {
-        padding: 12px 15px;
+      .logo {
+        font-size: 32px;
       }
-      
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
+
+      .tagline {
+        font-size: 14px;
+        padding: 10px 20px;
       }
-      
-      .nav-links {
-        gap: 15px;
-      }
-      
+
       .page-title {
         font-size: 32px;
       }
@@ -615,132 +635,104 @@
     .icon-faq::before { content: "❓"; }
     .icon-library::before { content: "📚"; }
     .icon-contact::before { content: "✉️"; }
+    .icon-about::before { content: "ℹ️"; }
     .icon-email::before { content: "📧"; }
     .icon-phone::before { content: "📞"; }
     .icon-chat::before { content: "💬"; }
     .icon-location::before { content: "📍"; }
-    .icon-social::before { content: "🌐"; }
-    .icon-support::before { content: "🛠️"; }
+    .icon-whatsapp::before { content: "📱"; }
+    .icon-instagram::before { content: "📷"; }
+    .icon-facebook::before { content: "👥"; }
   </style>
 </head>
 <body>
   <div class="bg-decoration"></div>
   <div class="bg-decoration"></div>
   
-  <!-- شريط التنقل -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="https://www.ondeenway.org/" class="nav-logo">DEENWAY</a>
-      <div class="nav-links">
-        <a href="https://www.ondeenway.org/">الرئيسية</a>
-        <a href="https://ebook.ondeenway.org/">المكتبة</a>
-        <a href="https://faq.ondeenway.org/">الأسئلة الشائعة</a>
-        <a href="#" class="active">اتصل بنا</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- المحتوى الرئيسي -->
   <div class="main-content">
+    <div class="logo-container">
+      <div class="logo-decoration"></div>
+      <div class="logo fade-in">Contact DEENWAY</div>
+    </div>
+    
+    <!-- العبارة الثابتة التي لا تتغير -->
+    <div class="tagline fade-in">One truth — eight languages</div>
+
+    <div class="language-select fade-in">
+      <select id="languageDropdown" onchange="changeLanguage(this.value)">
+        <option value="ar" selected>العربية</option>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="tr">Türkçe</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="ur">اردو</option>
+      </select>
+    </div>
+
     <header class="page-header fade-in">
-      <h1 class="page-title">اتصل بنا</h1>
-      <p class="page-subtitle">نحن هنا للإجابة على استفساراتك وتلقي ملاحظاتك. تواصل معنا بأي طريقة تناسبك</p>
+      <h1 class="page-title" id="pageTitle">اتصل بنا</h1>
+      <p class="page-subtitle" id="pageSubtitle">نحن هنا للإجابة على استفساراتك وتلقي ملاحظاتك. تواصل معنا بأي طريقة تناسبك</p>
     </header>
 
     <!-- طرق التواصل -->
     <section class="contact-methods fade-in">
       <div class="contact-card">
         <i class="contact-icon icon-email"></i>
-        <h3 class="contact-title">البريد الإلكتروني</h3>
-        <p class="contact-desc">أرسل رسالتك إلينا عبر البريد الإلكتروني وسنرد عليك خلال 24 ساعة</p>
-        <a href="mailto:info@ondeenway.org" class="contact-link">إرسال بريد</a>
+        <h3 class="contact-title" id="emailTitle">البريد الإلكتروني</h3>
+        <p class="contact-desc" id="emailDesc">أرسل رسالتك إلينا عبر البريد الإلكتروني وسنرد عليك خلال 24 ساعة</p>
+        <a href="mailto:contact@ondeenway.org" class="contact-link" id="emailLink">إرسال بريد</a>
       </div>
       
       <div class="contact-card">
-        <i class="contact-icon icon-chat"></i>
-        <h3 class="contact-title">الدردشة المباشرة</h3>
-        <p class="contact-desc">تواصل مع فريق الدعم مباشرة للحصول على إجابات فورية لاستفساراتك</p>
-        <a href="#" class="contact-link">بدء الدردشة</a>
+        <i class="contact-icon icon-instagram"></i>
+        <h3 class="contact-title" id="socialTitle">وسائل التواصل الاجتماعي</h3>
+        <p class="contact-desc" id="socialDesc">تابعنا على إنستغرام وفيسبوك لمعرفة آخر المستجدات</p>
+        <a href="https://instagram.com/ondeenwayorg" target="_blank" class="contact-link" id="socialLink">متابعتنا</a>
       </div>
       
       <div class="contact-card">
-        <i class="contact-icon icon-phone"></i>
-        <h3 class="contact-title">الاتصال الهاتفي</h3>
-        <p class="contact-desc">تحدث مع أحد ممثلينا خلال ساعات العمل الرسمية من الساعة 9 صباحاً حتى 5 مساءً</p>
-        <a href="tel:+966123456789" class="contact-link">اتصال هاتفي</a>
+        <i class="contact-icon icon-whatsapp"></i>
+        <h3 class="contact-title" id="phoneTitle">واتساب</h3>
+        <p class="contact-desc" id="phoneDesc">تواصل معنا عبر واتساب للحصول على إجابات سريعة لاستفساراتك</p>
+        <a href="https://wa.me/212649106356" target="_blank" class="contact-link" id="phoneLink">تواصل عبر واتساب</a>
       </div>
     </section>
 
     <!-- نموذج الاتصال -->
     <section class="contact-form-container fade-in">
-      <h2 class="form-title">أرسل لنا رسالة</h2>
+      <h2 class="form-title" id="formTitle">أرسل لنا رسالة</h2>
       <form id="contactForm">
         <div class="form-row">
           <div class="form-group">
-            <label for="name" class="form-label">الاسم الكامل</label>
+            <label for="name" class="form-label" id="nameLabel">الاسم الكامل</label>
             <input type="text" id="name" class="form-input" placeholder="أدخل اسمك الكامل" required>
           </div>
           <div class="form-group">
-            <label for="email" class="form-label">البريد الإلكتروني</label>
+            <label for="email" class="form-label" id="emailLabel">البريد الإلكتروني</label>
             <input type="email" id="email" class="form-input" placeholder="أدخل بريدك الإلكتروني" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="subject" class="form-label">موضوع الرسالة</label>
-          <input type="text" id="subject" class="form-input" placeholder="موضوع رسالتك" required>
+          <label for="subject" class="form-label" id="subjectLabel">موضوع الرسالة</label>
+          <select id="subject" class="form-select" required>
+            <option value="" disabled selected>اختر موضوع الرسالة</option>
+            <option value="general">استفسار عام</option>
+            <option value="support">طلب دعم</option>
+            <option value="feedback">ملاحظات واقتراحات</option>
+            <option value="partnership">شراكة وتعاون</option>
+            <option value="technical">مشكلة تقنية</option>
+            <option value="other">موضوع آخر</option>
+          </select>
         </div>
         <div class="form-group full-width">
-          <label for="message" class="form-label">الرسالة</label>
+          <label for="message" class="form-label" id="messageLabel">الرسالة</label>
           <textarea id="message" class="form-textarea" placeholder="اكتب رسالتك هنا..." required></textarea>
         </div>
-        <button type="submit" class="submit-btn">إرسال الرسالة</button>
+        <button type="submit" class="submit-btn" id="submitBtn">إرسال الرسالة</button>
+        <div id="formMessage" class="form-message"></div>
       </form>
-    </section>
-
-    <!-- الأسئلة الشائعة -->
-    <section class="faq-section fade-in">
-      <h2 class="section-title">أسئلة متكررة</h2>
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>ما هي أوقات الاستجابة للرسائل؟</span>
-            <i class="faq-icon">▼</i>
-          </div>
-          <div class="faq-answer">
-            <p>نحن نرد على جميع الرسائل خلال 24 ساعة عمل. للاستفسارات العاجلة، ننصح باستخدام خدمة الدردشة المباشرة المتاحة من الساعة 9 صباحاً حتى 5 مساءً.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>هل تقدمون استشارات دينية شخصية؟</span>
-            <i class="faq-icon">▼</i>
-          </div>
-          <div class="faq-answer">
-            <p>نعم، لدينا فريق من المتخصصين المؤهلين لتقديم استشارات دينية. يمكنك طلب استشارة عبر نموذج الاتصال مع ذكر "استشارة دينية" في موضوع الرسالة.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>كيف يمكنني المساهمة في المحتوى؟</span>
-            <i class="faq-icon">▼</i>
-          </div>
-          <div class="faq-answer">
-            <p>نرحب بمساهماتكم في إثراء المحتوى. يمكنكم إرسال مقترحاتكم عبر نموذج الاتصال أو البريد الإلكتروني. سيقوم فريقنا بمراجعة المقترحات والرد عليكم.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>هل المحتوى متاح بلغات أخرى؟</span>
-            <i class="faq-icon">▼</i>
-          </div>
-          <div class="faq-answer">
-            <p>نعم، يتوفر محتوى Deenway بثماني لغات: العربية، الإنجليزية، الفرنسية، الإسبانية، الألمانية، التركية، الإندونيسية، والأردية.</p>
-          </div>
-        </div>
-      </div>
     </section>
   </div>
 
@@ -750,79 +742,394 @@
     <div class="footer-decoration"></div>
     
     <div class="footer-content">
-      <div class="footer-title">روابط مهمة</div>
+      <div class="footer-title" id="footerTitle">روابط مهمة</div>
       
-      <div class="footer-links">
-        <div class="footer-link-item">
-          <a href="https://www.ondeenway.org/">
-            <i class="icon-home"></i>
-            <span>الموقع الرسمي</span>
-          </a>
-        </div>
-        <div class="footer-link-item">
-          <a href="https://faq.ondeenway.org/">
-            <i class="icon-faq"></i>
-            <span>الأسئلة الشائعة</span>
-          </a>
-        </div>
-        <div class="footer-link-item">
-          <a href="https://ebook.ondeenway.org/">
-            <i class="icon-library"></i>
-            <span>مكتبة DEENWAY</span>
-          </a>
-        </div>
-        <div class="footer-link-item">
-          <a href="#">
-            <i class="icon-contact"></i>
-            <span>اتصل بنا</span>
-          </a>
-        </div>
+      <div class="footer-links" id="footerLinks">
+        <!-- سيتم ملء هذه الروابط ديناميكياً بناءً على اللغة المختارة -->
       </div>
     </div>
   </footer>
 
   <script>
-    // تفعيل الأسئلة الشائعة
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const item = question.parentNode;
-        item.classList.toggle('active');
+    // بيانات النصوص بجميع اللغات
+    const pageTitles = {
+      ar: "اتصل بنا",
+      fr: "Contactez-nous",
+      en: "Contact Us",
+      es: "Contáctenos",
+      de: "Kontaktieren Sie uns",
+      tr: "Bize Ulaşın",
+      id: "Hubungi Kami",
+      ur: "ہم سے رابطہ کریں"
+    };
+
+    const pageSubtitles = {
+      ar: "نحن هنا للإجابة على استفساراتك وتلقي ملاحظاتك. تواصل معنا بأي طريقة تناسبك",
+      fr: "Nous sommes là pour répondre à vos questions et recevoir vos commentaires. Contactez-nous de la manière qui vous convient le mieux",
+      en: "We're here to answer your questions and receive your feedback. Contact us in any way that suits you",
+      es: "Estamos aquí para responder a sus preguntas y recibir sus comentarios. Contáctenos de la forma que más le convenga",
+      de: "Wir sind hier, um Ihre Fragen zu beantworten und Ihr Feedback zu erhalten. Kontaktieren Sie uns auf die für Sie passende Weise",
+      tr: "Sorularınızı yanıtlamak ve geri bildirimlerinizi almak için buradayız. Size uygun herhangi bir şekilde bizimle iletişime geçin",
+      id: "Kami di sini untuk menjawab pertanyaan Anda dan menerima masukan Anda. Hubungi kami dengan cara apa pun yang sesuai untuk Anda",
+      ur: "ہم آپ کے سوالات کے جوابات دینے اور آپ کی رائے حاصل کرنے کے لیے یہاں موجود ہیں۔ ہم سے کسی بھی طریقے سے رابطہ کریں جو آپ کے لیے موزوں ہو"
+    };
+
+    // بيانات بطاقات الاتصال
+    const contactData = {
+      email: {
+        title: {
+          ar: "البريد الإلكتروني",
+          fr: "E-mail",
+          en: "Email",
+          es: "Correo electrónico",
+          de: "E-Mail",
+          tr: "E-posta",
+          id: "Email",
+          ur: "ای میل"
+        },
+        desc: {
+          ar: "أرسل رسالتك إلينا عبر البريد الإلكتروني وسنرد عليك خلال 24 ساعة",
+          fr: "Envoyez-nous votre message par e-mail et nous vous répondrons dans les 24 heures",
+          en: "Send us your message via email and we will respond to you within 24 hours",
+          es: "Envíenos su mensaje por correo electrónico y le responderemos en 24 horas",
+          de: "Senden Sie uns Ihre Nachricht per E-Mail und wir antworten Ihnen innerhalb von 24 Stunden",
+          tr: "Bize e-posta yoluyla mesajınızı gönderin, 24 saat içinde size yanıt vereceğiz",
+          id: "Kirimkan pesan Anda kepada kami melalui email dan kami akan merespons dalam 24 jam",
+          ur: "ہمیں ای میل کے ذریعے اپنا پیغام بھیجیں اور ہم 24 گھنٹوں کے اندر آپ کو جواب دیں گے"
+        },
+        link: {
+          ar: "إرسال بريد",
+          fr: "Envoyer un e-mail",
+          en: "Send Email",
+          es: "Enviar correo",
+          de: "E-Mail senden",
+          tr: "E-posta Gönder",
+          id: "Kirim Email",
+          ur: "ای میل بھیجیں"
+        }
+      },
+      social: {
+        title: {
+          ar: "وسائل التواصل الاجتماعي",
+          fr: "Médias sociaux",
+          en: "Social Media",
+          es: "Redes sociales",
+          de: "Soziale Medien",
+          tr: "Sosyal Medya",
+          id: "Media Sosial",
+          ur: "سوشل میڈیا"
+        },
+        desc: {
+          ar: "تابعنا على إنستغرام وفيسبوك لمعرفة آخر المستجدات",
+          fr: "Suivez-nous sur Instagram et Facebook pour les dernières mises à jour",
+          en: "Follow us on Instagram and Facebook for the latest updates",
+          es: "Síganos en Instagram y Facebook para obtener las últimas actualizaciones",
+          de: "Folgen Sie uns auf Instagram und Facebook für die neuesten Updates",
+          tr: "En son güncellemeler için bizi Instagram ve Facebook'ta takip edin",
+          id: "Ikuti kami di Instagram dan Facebook untuk pembaruan terbaru",
+          ur: "تازہ ترین اپ ڈیٹس کے لیے ہمیں انسٹاگرام اور فیس بک پر فالو کریں"
+        },
+        link: {
+          ar: "متابعتنا",
+          fr: "Nous suivre",
+          en: "Follow Us",
+          es: "Síganos",
+          de: "Folgen Sie uns",
+          tr: "Bizi Takip Edin",
+          id: "Ikuti Kami",
+          ur: "ہمیں فالو کریں"
+        }
+      },
+      phone: {
+        title: {
+          ar: "واتساب",
+          fr: "WhatsApp",
+          en: "WhatsApp",
+          es: "WhatsApp",
+          de: "WhatsApp",
+          tr: "WhatsApp",
+          id: "WhatsApp",
+          ur: "واٹس ایپ"
+        },
+        desc: {
+          ar: "تواصل معنا عبر واتساب للحصول على إجابات سريعة لاستفساراتك",
+          fr: "Contactez-nous via WhatsApp pour des réponses rapides à vos questions",
+          en: "Contact us via WhatsApp for quick answers to your inquiries",
+          es: "Contáctenos por WhatsApp para obtener respuestas rápidas a sus consultas",
+          de: "Kontaktieren Sie uns über WhatsApp für schnelle Antworten auf Ihre Anfragen",
+          tr: "Sorularınız için hızlı yanıtlar almak üzere WhatsApp üzerinden bizimle iletişime geçin",
+          id: "Hubungi kami melalui WhatsApp untuk jawaban cepat atas pertanyaan Anda",
+          ur: "اپنے سوالات کے فوری جوابات کے لیے واٹس ایپ کے ذریعے ہم سے رابطہ کریں"
+        },
+        link: {
+          ar: "تواصل عبر واتساب",
+          fr: "Contacter via WhatsApp",
+          en: "Contact via WhatsApp",
+          es: "Contactar por WhatsApp",
+          de: "Kontakt per WhatsApp",
+          tr: "WhatsApp ile İletişim",
+          id: "Hubungi via WhatsApp",
+          ur: "واٹس ایپ کے ذریعے رابطہ کریں"
+        }
+      }
+    };
+
+    // بيانات نموذج الاتصال
+    const formData = {
+      title: {
+        ar: "أرسل لنا رسالة",
+        fr: "Envoyez-nous un message",
+        en: "Send us a message",
+        es: "Envíenos un mensaje",
+        de: "Senden Sie uns eine Nachricht",
+        tr: "Bize bir mesaj gönderin",
+        id: "Kirimkan kami pesan",
+        ur: "ہمیں ایک پیغام بھیجیں"
+      },
+      name: {
+        ar: "الاسم الكامل",
+        fr: "Nom complet",
+        en: "Full Name",
+        es: "Nombre completo",
+        de: "Vollständiger Name",
+        tr: "Tam Adı",
+        id: "Nama Lengkap",
+        ur: "پورا نام"
+      },
+      email: {
+        ar: "البريد الإلكتروني",
+        fr: "E-mail",
+        en: "Email",
+        es: "Correo electrónico",
+        de: "E-Mail",
+        tr: "E-posta",
+        id: "Email",
+        ur: "ای میل"
+      },
+      subject: {
+        ar: "موضوع الرسالة",
+        fr: "Sujet du message",
+        en: "Message Subject",
+        es: "Asunto del mensaje",
+        de: "Nachrichtenbetreff",
+        tr: "Mesaj Konusu",
+        id: "Subjek Pesan",
+        ur: "پیغام کا موضوع"
+      },
+      message: {
+        ar: "الرسالة",
+        fr: "Message",
+        en: "Message",
+        es: "Mensaje",
+        de: "Nachricht",
+        tr: "Mesaj",
+        id: "Pesan",
+        ur: "پیغام"
+      },
+      submit: {
+        ar: "إرسال الرسالة",
+        fr: "Envoyer le message",
+        en: "Send Message",
+        es: "Enviar mensaje",
+        de: "Nachricht senden",
+        tr: "Mesajı Gönder",
+        id: "Kirim Pesan",
+        ur: "پیغام بھیجیں"
+      }
+    };
+
+    // عناوين الفوتر بجميع اللغات
+    const footerTitles = {
+      ar: "روابط مهمة",
+      fr: "Liens Importants",
+      en: "Important Links",
+      es: "Enlaces Importantes",
+      de: "Wichtige Links",
+      tr: "Önemli Bağlantılar",
+      id: "Tautan Penting",
+      ur: "اہم روابط"
+    };
+
+    // روابط الفوتر بجميع اللغات مع الأيقونات
+    const footerLinks = {
+      ar: [
+        { text: "الموقع الرسمي", url: "https://www.ondeenway.org/", icon: "icon-home" },
+        { text: "الأسئلة الشائعة", url: "https://faq.ondeenway.org/", icon: "icon-faq" },
+        { text: "مكتبة DEENWAY", url: "https://ebook.ondeenway.org/", icon: "icon-library" },
+        { text: "من نحن", url: "https://about.ondeenway.org/", icon: "icon-about" }
+      ],
+      fr: [
+        { text: "Site Officiel", url: "https://www.ondeenway.org/", icon: "icon-home" },
+        { text: "FAQ", url: "https://faq.ondeenway.org/", icon: "icon-faq" },
+        { text: "Bibliothèque DEENWAY", url: "https://ebook.ondeenway.org/", icon: "icon-library" },
+        { text: "À propos", url: "https://about.ondeenway.org/", icon: "icon-about" }
+      ],
+      en: [
+        { text: "Official Website", url: "https://www.ondeenway.org/", icon: "icon-home" },
+        { text: "FAQ", url: "https://faq.ondeenway.org/", icon: "icon-faq" },
+        { text: "DEENWAY Library", url: "https://ebook.ondeenway.org/", icon: "icon-library" },
+        { text: "About Us", url: "https://about.ondeenway.org/", icon: "icon-about" }
+      ],
+      es: [
+        { text: "Sitio Oficial", url: "https://www.ondeenway.org/", icon: "icon-home" },
+        { text: "Preguntas Frecuentes", url: "https://faq.ondeenway.org/", icon: "icon-faq" },
+        { text: "Biblioteca DEENWAY", url: "https://ebook.ondeenway.org/", icon: "icon-library" },
+        { text: "Acerca de", url: "https://about.ondeenway.org/", icon: "icon-about" }
+      ],
+      de: [
+        { text: "Offizielle Website", url: "https://www.ondeenway.org/", icon: "icon-home" },
+        { text: "FAQ", url: "https://faq.ondeenway.org/", icon: "icon-faq" },
+        { text: "DEENWAY Bibliothek", url: "https://ebook.ondeenway.org/", icon: "icon-library" },
+        { text: "Über uns", url: "https://about.ondeenway.org/", icon: "icon-about" }
+      ],
+      tr: [
+        { text: "Resmi Web Sitesi", url: "https://www.ondeenway.org/", icon: "icon-home" },
+        { text: "SSS", url: "https://faq.ondeenway.org/", icon: "icon-faq" },
+        { text: "DEENWAY Kütüphanesi", url: "https://ebook.ondeenway.org/", icon: "icon-library" },
+        { text: "Hakkımızda", url: "https://about.ondeenway.org/", icon: "icon-about" }
+      ],
+      id: [
+        { text: "Situs Resmi", url: "https://www.ondeenway.org/", icon: "icon-home" },
+        { text: "FAQ", url: "https://faq.ondeenway.org/", icon: "icon-faq" },
+        { text: "Perpustakaan DEENWAY", url: "https://ebook.ondeenway.org/", icon: "icon-library" },
+        { text: "Tentang Kami", url: "https://about.ondeenway.org/", icon: "icon-about" }
+      ],
+      ur: [
+        { text: "سرکاری ویب سائٹ", url: "https://www.ondeenway.org/", icon: "icon-home" },
+        { text: "عمومی سوالات", url: "https://faq.ondeenway.org/", icon: "icon-faq" },
+        { text: "DEENWAY لائبریری", url: "https://ebook.ondeenway.org/", icon: "icon-library" },
+        { text: "ہمارے بارے میں", url: "https://about.ondeenway.org/", icon: "icon-about" }
+      ]
+    };
+
+    // عناصر DOM
+    const languageDropdown = document.getElementById("languageDropdown");
+    const pageTitleEl = document.getElementById("pageTitle");
+    const pageSubtitleEl = document.getElementById("pageSubtitle");
+    const footerLinksEl = document.getElementById("footerLinks");
+    const footerTitleEl = document.getElementById("footerTitle");
+
+    let currentLang = languageDropdown.value || 'ar';
+
+    function updatePageContent(lang) {
+      // تحديث عنوان الصفحة
+      pageTitleEl.textContent = pageTitles[lang] || pageTitles['ar'];
+      pageSubtitleEl.textContent = pageSubtitles[lang] || pageSubtitles['ar'];
+      
+      // تحديث بطاقات الاتصال
+      document.getElementById('emailTitle').textContent = contactData.email.title[lang] || contactData.email.title['ar'];
+      document.getElementById('emailDesc').textContent = contactData.email.desc[lang] || contactData.email.desc['ar'];
+      document.getElementById('emailLink').textContent = contactData.email.link[lang] || contactData.email.link['ar'];
+      
+      document.getElementById('socialTitle').textContent = contactData.social.title[lang] || contactData.social.title['ar'];
+      document.getElementById('socialDesc').textContent = contactData.social.desc[lang] || contactData.social.desc['ar'];
+      document.getElementById('socialLink').textContent = contactData.social.link[lang] || contactData.social.link['ar'];
+      
+      document.getElementById('phoneTitle').textContent = contactData.phone.title[lang] || contactData.phone.title['ar'];
+      document.getElementById('phoneDesc').textContent = contactData.phone.desc[lang] || contactData.phone.desc['ar'];
+      document.getElementById('phoneLink').textContent = contactData.phone.link[lang] || contactData.phone.link['ar'];
+      
+      // تحديث نموذج الاتصال
+      document.getElementById('formTitle').textContent = formData.title[lang] || formData.title['ar'];
+      document.getElementById('nameLabel').textContent = formData.name[lang] || formData.name['ar'];
+      document.getElementById('emailLabel').textContent = formData.email[lang] || formData.email['ar'];
+      document.getElementById('subjectLabel').textContent = formData.subject[lang] || formData.subject['ar'];
+      document.getElementById('messageLabel').textContent = formData.message[lang] || formData.message['ar'];
+      document.getElementById('submitBtn').textContent = formData.submit[lang] || formData.submit['ar'];
+      
+      // تحديث العناصر النصية في النموذج
+      document.getElementById('name').placeholder = formData.name[lang] || formData.name['ar'];
+      document.getElementById('email').placeholder = formData.email[lang] || formData.email['ar'];
+      document.getElementById('message').placeholder = formData.message[lang] || formData.message['ar'];
+    }
+
+    function updateFooterTitle(lang) {
+      footerTitleEl.textContent = footerTitles[lang] || footerTitles['ar'];
+    }
+
+    function updateFooterLinks(lang) {
+      const links = footerLinks[lang] || footerLinks['ar'];
+      footerLinksEl.innerHTML = '';
+      
+      links.forEach(link => {
+        const linkItem = document.createElement('div');
+        linkItem.className = 'footer-link-item';
+        
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.target = "_blank";
+        
+        const icon = document.createElement('i');
+        icon.className = link.icon;
+        
+        const text = document.createTextNode(link.text);
+        
+        a.appendChild(icon);
+        a.appendChild(text);
+        linkItem.appendChild(a);
+        footerLinksEl.appendChild(linkItem);
       });
-    });
+    }
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      languageDropdown.value = lang;
+      updatePageContent(lang);
+      updateFooterTitle(lang);
+      updateFooterLinks(lang);
+      
+      // تغيير اتجاه النص بناءً على اللغة
+      if (lang === "ar" || lang === "ur") {
+        document.documentElement.dir = "rtl";
+      } else {
+        document.documentElement.dir = "ltr";
+      }
+    }
+
+    // البداية
+    updatePageContent(currentLang);
+    updateFooterTitle(currentLang);
+    updateFooterLinks(currentLang);
 
     // معالجة نموذج الاتصال
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // هنا يمكن إضافة كود إرسال النموذج إلى الخادم
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
+      const submitBtn = document.getElementById('submitBtn');
+      const formMessage = document.getElementById('formMessage');
       
-      // عرض رسالة نجاح (بدلاً من الإرسال الفعلي في هذا المثال)
-      alert(`شكراً ${name} على رسالتك! سنرد عليك قريباً على ${email}`);
+      // تعطيل الزر أثناء الإرسال
+      submitBtn.disabled = true;
+      submitBtn.textContent = "جاري الإرسال...";
       
-      // إعادة تعيين النموذج
-      this.reset();
-    });
-
-    // تأثيرات الظهور التدريجي للعناصر
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.contact-card, .contact-form-container, .faq-section').forEach(el => {
-      observer.observe(el);
+      // جمع بيانات النموذج
+      const formData = new FormData(this);
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        language: currentLang
+      };
+      
+      // محاكاة إرسال النموذج (في الواقع، سيتم إرساله إلى الخادم)
+      setTimeout(() => {
+        // عرض رسالة نجاح
+        formMessage.textContent = "شكراً لك! تم استلام رسالتك بنجاح وسنرد عليك قريباً.";
+        formMessage.className = "form-message success";
+        
+        // إعادة تعيين النموذج
+        this.reset();
+        
+        // إعادة تفعيل الزر
+        submitBtn.disabled = false;
+        submitBtn.textContent = formData.submit[currentLang] || formData.submit['ar'];
+        
+        // إخفاء الرسالة بعد 5 ثوانٍ
+        setTimeout(() => {
+          formMessage.style.display = 'none';
+        }, 5000);
+      }, 1500);
     });
   </script>
 </body>
