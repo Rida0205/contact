@@ -235,7 +235,7 @@
       gap: 30px;
       margin-bottom: 40px;
       width: 100%;
-      max-width: 1000px;
+      max-width: 1200px;
     }
 
     .contact-card {
@@ -308,53 +308,11 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
-    /* أزرار وسائل التواصل الاجتماعي */
-    .social-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
-
-    .social-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 24px;
-      text-decoration: none;
-      transition: var(--transition);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .social-btn:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .whatsapp-btn {
-      background: #25D366;
-      color: white;
-    }
-
-    .instagram-btn {
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      color: white;
-    }
-
-    .facebook-btn {
-      background: #1877F2;
-      color: white;
-    }
-
-    /* الفوتر المحسن */
+    /* الفوتر المبسط */
     footer {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 50px 20px 30px;
+      padding: 40px 20px;
       text-align: center;
       width: 100%;
       position: relative;
@@ -385,104 +343,35 @@
       z-index: 2;
     }
 
-    .footer-main {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-      text-align: right;
-    }
-
-    .footer-section h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--light);
-      position: relative;
-      display: inline-block;
-    }
-
-    .footer-section h3::after {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      right: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
     .footer-links {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.8);
+      color: white;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 12px 24px;
+      border-radius: 25px;
       transition: var(--transition);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 0;
+      gap: 8px;
+      min-width: 160px;
+      justify-content: center;
     }
 
     .footer-links a:hover {
-      color: var(--light);
-      transform: translateX(-5px);
-    }
-
-    .footer-links a i {
-      font-size: 16px;
-      width: 20px;
-    }
-
-    .social-section {
-      margin-top: 20px;
-    }
-
-    .social-section h4 {
-      font-size: 16px;
-      margin-bottom: 15px;
-      color: var(--light);
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      text-decoration: none;
-      transition: var(--transition);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .footer-social a:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
       transform: translateY(-3px);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 25px;
-      margin-top: 30px;
-    }
-
-    .footer-bottom p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 14px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
     .footer-decoration {
@@ -552,19 +441,14 @@
         grid-template-columns: 1fr;
       }
       
-      .footer-main {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
+      .footer-links {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
       }
-      
-      .footer-section h3::after {
-        right: 50%;
-        transform: translateX(50%);
-      }
-      
+
       .footer-links a {
-        justify-content: center;
+        min-width: 200px;
       }
 
       .bg-decoration {
@@ -630,7 +514,7 @@
       <div class="contact-card">
         <i class="contact-icon fas fa-envelope" style="color: #e63946;"></i>
         <h3 class="contact-title" id="emailTitle">البريد الإلكتروني</h3>
-        <p class="contact-desc" id="emailDesc">أرسل رسالتك إلينا عبر البريد الإلكتروني وسنرد عليك خلال 24 ساعة</p>
+        <p class="contact-desc" id="emailDesc">أرسل رسالتك إلينا عبر البريد الإلكتروني وسنرد عليك خلال 24 ساعة بإذن الله</p>
         <a href="mailto:contact@ondeenway.org" class="contact-link">
           <i class="fas fa-paper-plane"></i>
           <span id="emailLink">إرسال بريد</span>
@@ -640,7 +524,7 @@
       <div class="contact-card">
         <i class="contact-icon fab fa-whatsapp" style="color: #25D366;"></i>
         <h3 class="contact-title" id="whatsappTitle">واتساب</h3>
-        <p class="contact-desc" id="whatsappDesc">تواصل معنا عبر واتساب للحصول على إجابات سريعة لاستفساراتك</p>
+        <p class="contact-desc" id="whatsappDesc">تواصل معنا عبر واتساب للحصول على إجابات سريعة لاستفساراتك بإذن الله</p>
         <a href="https://wa.me/212649106356" target="_blank" class="contact-link">
           <i class="fab fa-whatsapp"></i>
           <span id="whatsappLink">تواصل عبر واتساب</span>
@@ -648,86 +532,50 @@
       </div>
       
       <div class="contact-card">
-        <i class="contact-icon fas fa-share-alt" style="color: #457b9d;"></i>
-        <h3 class="contact-title" id="socialTitle">وسائل التواصل الاجتماعي</h3>
-        <p class="contact-desc" id="socialDesc">تابعنا على منصات التواصل الاجتماعي لمعرفة آخر المستجدات</p>
-        <div class="social-buttons">
-          <a href="https://instagram.com/ondeenwayorg" target="_blank" class="social-btn instagram-btn" title="انستغرام">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://facebook.com/ondeenwayorg" target="_blank" class="social-btn facebook-btn" title="فيسبوك">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </div>
+        <i class="contact-icon fab fa-facebook" style="color: #1877F2;"></i>
+        <h3 class="contact-title" id="facebookTitle">فيسبوك</h3>
+        <p class="contact-desc" id="facebookDesc">تواصل معنا على فيسبوك للاستفسارات والمتابعة</p>
+        <a href="https://facebook.com/ondeenwayorg" target="_blank" class="contact-link">
+          <i class="fab fa-facebook-f"></i>
+          <span id="facebookLink">تواصل على فيسبوك</span>
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <i class="contact-icon fab fa-instagram" style="color: #E4405F;"></i>
+        <h3 class="contact-title" id="instagramTitle">إنستغرام</h3>
+        <p class="contact-desc" id="instagramDesc">تواصل معنا على إنستغرام لمتابعة آخر المستجدات</p>
+        <a href="https://instagram.com/ondeenwayorg" target="_blank" class="contact-link">
+          <i class="fab fa-instagram"></i>
+          <span id="instagramLink">تواصل على إنستغرام</span>
+        </a>
       </div>
     </section>
   </div>
 
-  <!-- الفوتر المحسن -->
+  <!-- الفوتر المبسط -->
   <footer>
     <div class="footer-decoration"></div>
     <div class="footer-decoration"></div>
     
     <div class="footer-content">
-      <div class="footer-main">
-        <div class="footer-section">
-          <h3 id="footerLinksTitle">روابط سريعة</h3>
-          <div class="footer-links">
-            <a href="https://www.ondeenway.org/" target="_blank">
-              <i class="fas fa-home"></i>
-              <span id="footerHome">الموقع الرسمي</span>
-            </a>
-            <a href="https://faq.ondeenway.org/" target="_blank">
-              <i class="fas fa-question-circle"></i>
-              <span id="footerFaq">الأسئلة الشائعة</span>
-            </a>
-            <a href="https://ebook.ondeenway.org/" target="_blank">
-              <i class="fas fa-book"></i>
-              <span id="footerLibrary">مكتبة DEENWAY</span>
-            </a>
-            <a href="https://about.ondeenway.org/" target="_blank">
-              <i class="fas fa-info-circle"></i>
-              <span id="footerAbout">من نحن</span>
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3 id="footerContactTitle">تواصل معنا</h3>
-          <div class="footer-links">
-            <a href="mailto:contact@ondeenway.org">
-              <i class="fas fa-envelope"></i>
-              <span>contact@ondeenway.org</span>
-            </a>
-            <a href="https://wa.me/212649106356" target="_blank">
-              <i class="fab fa-whatsapp"></i>
-              <span>واتساب</span>
-            </a>
-          </div>
-          
-          <div class="social-section">
-            <h4 id="footerFollowTitle">تابعنا</h4>
-            <div class="footer-social">
-              <a href="https://instagram.com/ondeenwayorg" target="_blank" title="انستغرام">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://facebook.com/ondeenwayorg" target="_blank" title="فيسبوك">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3 id="footerAboutTitle">عن DEENWAY</h3>
-          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 15px;" id="footerAboutDesc">
-            منصة إسلامية شاملة تقدم المحتوى الديني بثماني لغات مختلفة، تهدف إلى نشر الهداية والنور لكل باحث عن الحق.
-          </p>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p id="footerCopyright">&copy; 2024 DEENWAY. جميع الحقوق محفوظة.</p>
+      <div class="footer-links">
+        <a href="https://www.ondeenway.org/" target="_blank">
+          <i class="fas fa-home"></i>
+          <span id="footerHome">الموقع الرسمي</span>
+        </a>
+        <a href="https://faq.ondeenway.org/" target="_blank">
+          <i class="fas fa-question-circle"></i>
+          <span id="footerFaq">الأسئلة الشائعة</span>
+        </a>
+        <a href="https://ebook.ondeenway.org/" target="_blank">
+          <i class="fas fa-book"></i>
+          <span id="footerLibrary">مكتبة DEENWAY</span>
+        </a>
+        <a href="https://about.ondeenway.org/" target="_blank">
+          <i class="fas fa-info-circle"></i>
+          <span id="footerAbout">من نحن</span>
+        </a>
       </div>
     </div>
   </footer>
@@ -770,14 +618,14 @@
           ur: "ای میل"
         },
         desc: {
-          ar: "أرسل رسالتك إلينا عبر البريد الإلكتروني وسنرد عليك خلال 24 ساعة",
-          fr: "Envoyez-nous votre message par e-mail et nous vous répondrons dans les 24 heures",
-          en: "Send us your message via email and we will respond to you within 24 hours",
-          es: "Envíenos su mensaje por correo electrónico y le responderemos en 24 horas",
-          de: "Senden Sie uns Ihre Nachricht per E-Mail und wir antworten Ihnen innerhalb von 24 Stunden",
-          tr: "Bize e-posta yoluyla mesajınızı gönderin, 24 saat içinde size yanıt vereceğiz",
-          id: "Kirimkan pesan Anda kepada kami melalui email dan kami akan merespons dalam 24 jam",
-          ur: "ہمیں ای میل کے ذریعے اپنا پیغام بھیجیں اور ہم 24 گھنٹوں کے اندر آپ کو جواب دیں گے"
+          ar: "أرسل رسالتك إلينا عبر البريد الإلكتروني وسنرد عليك خلال 24 ساعة بإذن الله",
+          fr: "Envoyez-nous votre message par e-mail et nous vous répondrons dans les 24 heures, si Dieu le veut",
+          en: "Send us your message via email and we will respond to you within 24 hours, God willing",
+          es: "Envíenos su mensaje por correo electrónico y le responderemos en 24 horas, si Dios quiere",
+          de: "Senden Sie uns Ihre Nachricht per E-Mail und wir antworten Ihnen innerhalb von 24 Stunden, so Gott will",
+          tr: "Bize e-posta yoluyla mesajınızı gönderin, 24 saat içinde size yanıt vereceğiz, inşallah",
+          id: "Kirimkan pesan Anda kepada kami melalui email dan kami akan merespons dalam 24 jam, insya Allah",
+          ur: "ہمیں ای میل کے ذریعے اپنا پیغام بھیجیں اور ہم 24 گھنٹوں کے اندر آپ کو جواب دیں گے، ان شاء اللہ"
         },
         link: {
           ar: "إرسال بريد",
@@ -802,14 +650,14 @@
           ur: "واٹس ایپ"
         },
         desc: {
-          ar: "تواصل معنا عبر واتساب للحصول على إجابات سريعة لاستفساراتك",
-          fr: "Contactez-nous via WhatsApp pour des réponses rapides à vos questions",
-          en: "Contact us via WhatsApp for quick answers to your inquiries",
-          es: "Contáctenos por WhatsApp para obtener respuestas rápidas a sus consultas",
-          de: "Kontaktieren Sie uns über WhatsApp für schnelle Antworten auf Ihre Anfragen",
-          tr: "Sorularınız için hızlı yanıtlar almak üzere WhatsApp üzerinden bizimle iletişime geçin",
-          id: "Hubungi kami melalui WhatsApp untuk jawaban cepat atas pertanyaan Anda",
-          ur: "اپنے سوالات کے فوری جوابات کے لیے واٹس ایپ کے ذریعے ہم سے رابطہ کریں"
+          ar: "تواصل معنا عبر واتساب للحصول على إجابات سريعة لاستفساراتك بإذن الله",
+          fr: "Contactez-nous via WhatsApp pour des réponses rapides à vos questions, si Dieu le veut",
+          en: "Contact us via WhatsApp for quick answers to your inquiries, God willing",
+          es: "Contáctenos por WhatsApp para obtener respuestas rápidas a sus consultas, si Dios quiere",
+          de: "Kontaktieren Sie uns über WhatsApp für schnelle Antworten auf Ihre Anfragen, so Gott will",
+          tr: "Sorularınız için hızlı yanıtlar almak üzere WhatsApp üzerinden bizimle iletişime geçin, inşallah",
+          id: "Hubungi kami melalui WhatsApp untuk jawaban cepat atas pertanyaan Anda, insya Allah",
+          ur: "اپنے سوالات کے فوری جوابات کے لیے واٹس ایپ کے ذریعے ہم سے رابطہ کریں، ان شاء اللہ"
         },
         link: {
           ar: "تواصل عبر واتساب",
@@ -822,42 +670,74 @@
           ur: "واٹس ایپ کے ذریعے رابطہ کریں"
         }
       },
-      social: {
+      facebook: {
         title: {
-          ar: "وسائل التواصل الاجتماعي",
-          fr: "Médias sociaux",
-          en: "Social Media",
-          es: "Redes sociales",
-          de: "Soziale Medien",
-          tr: "Sosyal Medya",
-          id: "Media Sosial",
-          ur: "سوشل میڈیا"
+          ar: "فيسبوك",
+          fr: "Facebook",
+          en: "Facebook",
+          es: "Facebook",
+          de: "Facebook",
+          tr: "Facebook",
+          id: "Facebook",
+          ur: "فیس بک"
         },
         desc: {
-          ar: "تابعنا على منصات التواصل الاجتماعي لمعرفة آخر المستجدات",
-          fr: "Suivez-nous sur les réseaux sociaux pour les dernières mises à jour",
-          en: "Follow us on social media for the latest updates",
-          es: "Síganos en las redes sociales para obtener las últimas actualizaciones",
-          de: "Folgen Sie uns in den sozialen Medien für die neuesten Updates",
-          tr: "En son güncellemeler için bizi sosyal medyada takip edin",
-          id: "Ikuti kami di media sosial untuk pembaruan terbaru",
-          ur: "تازہ ترین اپ ڈیٹس کے لیے ہمیں سوشل میڈیا پر فالو کریں"
+          ar: "تواصل معنا على فيسبوك للاستفسارات والمتابعة",
+          fr: "Contactez-nous sur Facebook pour des questions et suivi",
+          en: "Contact us on Facebook for inquiries and follow-up",
+          es: "Contáctenos en Facebook para consultas y seguimiento",
+          de: "Kontaktieren Sie uns auf Facebook für Anfragen und Follow-up",
+          tr: "Soru ve takipler için bizimle Facebook'ta iletişime geçin",
+          id: "Hubungi kami di Facebook untuk pertanyaan dan tindak lanjut",
+          ur: "سوالات اور فالو اپ کے لیے ہم سے فیس بک پر رابطہ کریں"
+        },
+        link: {
+          ar: "تواصل على فيسبوك",
+          fr: "Contacter sur Facebook",
+          en: "Contact on Facebook",
+          es: "Contactar en Facebook",
+          de: "Kontakt auf Facebook",
+          tr: "Facebook'ta İletişim",
+          id: "Hubungi di Facebook",
+          ur: "فیس بک پر رابطہ کریں"
+        }
+      },
+      instagram: {
+        title: {
+          ar: "إنستغرام",
+          fr: "Instagram",
+          en: "Instagram",
+          es: "Instagram",
+          de: "Instagram",
+          tr: "Instagram",
+          id: "Instagram",
+          ur: "انسٹاگرام"
+        },
+        desc: {
+          ar: "تواصل معنا على إنستغرام لمتابعة آخر المستجدات",
+          fr: "Contactez-nous sur Instagram pour suivre les dernières mises à jour",
+          en: "Contact us on Instagram to follow the latest updates",
+          es: "Contáctenos en Instagram para seguir las últimas actualizaciones",
+          de: "Kontaktieren Sie uns auf Instagram, um die neuesten Updates zu verfolgen",
+          tr: "En son güncellemeleri takip etmek için bizimle Instagram'da iletişime geçin",
+          id: "Hubungi kami di Instagram untuk mengikuti pembaruan terbaru",
+          ur: "تازہ ترین اپ ڈیٹس کی پیروی کے لیے ہم سے انسٹاگرام پر رابطہ کریں"
+        },
+        link: {
+          ar: "تواصل على إنستغرام",
+          fr: "Contacter sur Instagram",
+          en: "Contact on Instagram",
+          es: "Contactar en Instagram",
+          de: "Kontakt auf Instagram",
+          tr: "Instagram'da İletişim",
+          id: "Hubungi di Instagram",
+          ur: "انسٹاگرام پر رابطہ کریں"
         }
       }
     };
 
     // بيانات الفوتر
     const footerData = {
-      linksTitle: {
-        ar: "روابط سريعة",
-        fr: "Liens Rapides",
-        en: "Quick Links",
-        es: "Enlaces Rápidos",
-        de: "Schnelllinks",
-        tr: "Hızlı Bağlantılar",
-        id: "Tautan Cepat",
-        ur: "فوری روابط"
-      },
       home: {
         ar: "الموقع الرسمي",
         fr: "Site Officiel",
@@ -897,56 +777,6 @@
         tr: "Hakkımızda",
         id: "Tentang Kami",
         ur: "ہمارے بارے میں"
-      },
-      contactTitle: {
-        ar: "تواصل معنا",
-        fr: "Contactez-nous",
-        en: "Contact Us",
-        es: "Contáctenos",
-        de: "Kontaktieren Sie uns",
-        tr: "Bize Ulaşın",
-        id: "Hubungi Kami",
-        ur: "ہم سے رابطہ کریں"
-      },
-      followTitle: {
-        ar: "تابعنا",
-        fr: "Suivez-nous",
-        en: "Follow Us",
-        es: "Síganos",
-        de: "Folgen Sie uns",
-        tr: "Bizi Takip Edin",
-        id: "Ikuti Kami",
-        ur: "ہمیں فالو کریں"
-      },
-      aboutTitle: {
-        ar: "عن DEENWAY",
-        fr: "À propos de DEENWAY",
-        en: "About DEENWAY",
-        es: "Acerca de DEENWAY",
-        de: "Über DEENWAY",
-        tr: "DEENWAY Hakkında",
-        id: "Tentang DEENWAY",
-        ur: "DEENWAY کے بارے میں"
-      },
-      aboutDesc: {
-        ar: "منصة إسلامية شاملة تقدم المحتوى الديني بثماني لغات مختلفة، تهدف إلى نشر الهداية والنور لكل باحث عن الحق.",
-        fr: "Une plateforme islamique complète offrant du contenu religieux en huit langues différentes, visant à diffuser la guidance et la lumière à chaque chercheur de vérité.",
-        en: "A comprehensive Islamic platform offering religious content in eight different languages, aiming to spread guidance and light to every truth seeker.",
-        es: "Una plataforma islámica integral que ofrece contenido religioso en ocho idiomas diferentes, con el objetivo de difundir orientación y luz a todos los buscadores de la verdad.",
-        de: "Eine umfassende islamische Plattform, die religiöse Inhalte in acht verschiedenen Sprachen anbietet und darauf abzielt, Rechtleitung und Licht für jeden Wahrheitssuchenden zu verbreiten.",
-        tr: "Sekiz farklı dilde dini içerik sunan kapsamlı bir İslami platform, her hakikat arayışındaki kişiye rehberlik ve ışık yaymayı amaçlıyor.",
-        id: "Platform Islam komprehensif yang menawarkan konten religius dalam delapan bahasa berbeda, bertujuan menyebarkan bimbingan dan cahaya kepada setiap pencari kebenaran.",
-        ur: "ایک جامع اسلامی پلیٹ فارم جو آٹھ مختلف زبانوں میں مذہبی مواد پیش کرتا ہے، جس کا مقصد ہر سچ کے متلاشی کو ہدایت اور روشنی پہنچانا ہے۔"
-      },
-      copyright: {
-        ar: "&copy; 2024 DEENWAY. جميع الحقوق محفوظة.",
-        fr: "&copy; 2024 DEENWAY. Tous droits réservés.",
-        en: "&copy; 2024 DEENWAY. All rights reserved.",
-        es: "&copy; 2024 DEENWAY. Todos los derechos reservados.",
-        de: "&copy; 2024 DEENWAY. Alle Rechte vorbehalten.",
-        tr: "&copy; 2024 DEENWAY. Tüm hakları saklıdır.",
-        id: "&copy; 2024 DEENWAY. Hak cipta dilindungi.",
-        ur: "&copy; 2024 DEENWAY. جملہ حقوق محفوظ ہیں۔"
       }
     };
 
@@ -971,20 +801,19 @@
       document.getElementById('whatsappDesc').textContent = contactData.whatsapp.desc[lang] || contactData.whatsapp.desc['ar'];
       document.getElementById('whatsappLink').textContent = contactData.whatsapp.link[lang] || contactData.whatsapp.link['ar'];
       
-      document.getElementById('socialTitle').textContent = contactData.social.title[lang] || contactData.social.title['ar'];
-      document.getElementById('socialDesc').textContent = contactData.social.desc[lang] || contactData.social.desc['ar'];
+      document.getElementById('facebookTitle').textContent = contactData.facebook.title[lang] || contactData.facebook.title['ar'];
+      document.getElementById('facebookDesc').textContent = contactData.facebook.desc[lang] || contactData.facebook.desc['ar'];
+      document.getElementById('facebookLink').textContent = contactData.facebook.link[lang] || contactData.facebook.link['ar'];
+      
+      document.getElementById('instagramTitle').textContent = contactData.instagram.title[lang] || contactData.instagram.title['ar'];
+      document.getElementById('instagramDesc').textContent = contactData.instagram.desc[lang] || contactData.instagram.desc['ar'];
+      document.getElementById('instagramLink').textContent = contactData.instagram.link[lang] || contactData.instagram.link['ar'];
       
       // تحديث الفوتر
-      document.getElementById('footerLinksTitle').textContent = footerData.linksTitle[lang] || footerData.linksTitle['ar'];
       document.getElementById('footerHome').textContent = footerData.home[lang] || footerData.home['ar'];
       document.getElementById('footerFaq').textContent = footerData.faq[lang] || footerData.faq['ar'];
       document.getElementById('footerLibrary').textContent = footerData.library[lang] || footerData.library['ar'];
       document.getElementById('footerAbout').textContent = footerData.about[lang] || footerData.about['ar'];
-      document.getElementById('footerContactTitle').textContent = footerData.contactTitle[lang] || footerData.contactTitle['ar'];
-      document.getElementById('footerFollowTitle').textContent = footerData.followTitle[lang] || footerData.followTitle['ar'];
-      document.getElementById('footerAboutTitle').textContent = footerData.aboutTitle[lang] || footerData.aboutTitle['ar'];
-      document.getElementById('footerAboutDesc').textContent = footerData.aboutDesc[lang] || footerData.aboutDesc['ar'];
-      document.getElementById('footerCopyright').innerHTML = footerData.copyright[lang] || footerData.copyright['ar'];
     }
 
     function changeLanguage(lang) {
